@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP WhatsApp Sipariş & Teklif Sistemi
  * Description: WooCommerce olmadan veya uyumlu çalışabilen, ürünler için WhatsApp üzerinden sipariş ve teklif alma eklentisi. Esnaf dostu.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Teymensel
  * Author URI: https://teymensel.com
  * Text Domain: wp-whatsapp-siparis
@@ -15,13 +15,14 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-define('WWS_VERSION', '1.1.1');
+define('WWS_VERSION', '1.1.2');
 define('WWS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WWS_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 require_once WWS_PLUGIN_DIR . 'includes/class-settings.php';
 require_once WWS_PLUGIN_DIR . 'includes/class-admin.php';
 require_once WWS_PLUGIN_DIR . 'includes/class-frontend.php';
+require_once WWS_PLUGIN_DIR . 'includes/class-updater.php';
 
 class WP_WhatsApp_Siparis
 {
@@ -31,6 +32,7 @@ class WP_WhatsApp_Siparis
 	public $settings;
 	public $admin;
 	public $frontend;
+	public $updater;
 
 	public static function get_instance()
 	{
@@ -46,6 +48,7 @@ class WP_WhatsApp_Siparis
 
 		if (is_admin()) {
 			$this->admin = new WWS_Admin($this->settings);
+			$this->updater = new WWS_Updater(__FILE__);
 		}
 
 		$this->frontend = new WWS_Frontend($this->settings);

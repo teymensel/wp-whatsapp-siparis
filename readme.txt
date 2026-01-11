@@ -35,6 +35,9 @@ Türkiye'deki küçük işletmeler ve esnaflar için geliştirilmiş, hızlı ve
 
 == Changelog ==
 
+= 1.1.2 =
+*   [Yenilik] GitHub Otomatik Güncelleme (Auto-Updater) entegrasyonu eklendi. Artık yeni sürümler panelden tek tıkla güncellenebilir.
+
 = 1.1.1 =
 *   [Düzeltme] Varsayılan mesaj şablonundaki emoji karakterleri, bazı sunucu ve tarayıcılarda kodlama sorunu () yarattığı için kaldırıldı.
 *   [Düzeltme] Mesaj şablonu daha sade ve evrensel bir formata (Bold başlıklar) dönüştürüldü.
