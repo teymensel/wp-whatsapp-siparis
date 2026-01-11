@@ -1,0 +1,275 @@
+/* Modern Variables */
+:root {
+	--wws-primary: #25D366;
+	--wws-dark: #128C7E;
+	--wws-text: #ffffff;
+	--wws-bg-light: #f8f9fa;
+	--wws-border: #e9ecef;
+	--wws-radius: 8px;
+	--wws-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	--wws-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Animations Keyframes */
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.05);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes shake {
+
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		transform: translateX(-4px);
+	}
+
+	20%,
+	40%,
+	60%,
+	80% {
+		transform: translateX(4px);
+	}
+}
+
+@keyframes bounce {
+
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-10px);
+	}
+
+	60% {
+		transform: translateY(-5px);
+	}
+}
+
+.wws-anim-pulse {
+	animation: pulse 2s infinite;
+}
+
+.wws-anim-shake {
+	animation: shake 5s infinite;
+	/* Slow repeat */
+}
+
+.wws-anim-bounce {
+	animation: bounce 2s infinite;
+}
+
+/* Container */
+.wws-container {
+	margin: 25px 0;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid var(--wws-border);
+	border-radius: 12px;
+	box-shadow: var(--wws-shadow);
+	max-width: 100%;
+	width: auto;
+	display: inline-block;
+	font-family: var(--wws-font);
+	transition: all 0.3s ease;
+}
+
+.wws-container:hover {
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Controls */
+.wws-controls {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+}
+
+.wws-control-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.wws-label {
+	font-size: 13px;
+	font-weight: 600;
+	color: #495057;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* Inputs */
+.wws-input-wrapper {
+	position: relative;
+}
+
+.wws-qty-input,
+.wws-var-input {
+	padding: 10px 12px !important;
+	border: 1px solid #ced4da !important;
+	border-radius: 6px !important;
+	font-size: 14px !important;
+	line-height: normal !important;
+	transition: border-color 0.2s ease;
+	background: #fff !important;
+	color: #333 !important;
+	box-shadow: none !important;
+}
+
+.wws-qty-input {
+	width: 80px !important;
+	text-align: center;
+}
+
+.wws-var-input {
+	width: 220px !important;
+}
+
+.wws-qty-input:focus,
+.wws-var-input:focus {
+	border-color: var(--wws-primary) !important;
+	outline: none !important;
+	box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1) !important;
+}
+
+/* Button */
+.wws-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 12px 28px;
+	/* BG handled by inline CSS */
+	color: var(--wws-btn-text, #fff);
+	border-radius: var(--wws-radius, 50px);
+	text-decoration: none !important;
+	font-weight: 600;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: var(--wws-shadow, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.wws-button:hover {
+	filter: brightness(110%);
+}
+
+.wws-button .wws-icon {
+	display: flex;
+	align-items: center;
+}
+
+/* Sizes */
+.wws-size-small {
+	padding: 8px 16px;
+	font-size: 14px;
+}
+
+.wws-size-medium {
+	padding: 12px 28px;
+	font-size: 16px;
+}
+
+.wws-size-large {
+	padding: 16px 36px;
+	font-size: 18px;
+}
+
+/* Floating Widget */
+.wws-floating-btn {
+	position: fixed;
+	bottom: 25px;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	padding: 12px 18px;
+	background-color: #25D366;
+	color: #fff !important;
+	border-radius: 50px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+	text-decoration: none !important;
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+	font-family: var(--wws-font);
+	font-weight: 600;
+}
+
+.wws-floating-btn:hover {
+	transform: scale(1.05) translateY(-3px);
+}
+
+.wws-floating-btn .dashicons {
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wws-float-text {
+	margin-left: 8px;
+	font-size: 15px;
+}
+
+.wws-float-right {
+	right: 25px;
+}
+
+.wws-float-left {
+	left: 25px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+	.wws-container {
+		display: block;
+		width: 100%;
+		padding: 15px;
+	}
+
+	.wws-controls {
+		flex-direction: column;
+		width: 100%;
+		gap: 10px;
+	}
+
+	.wws-control-group,
+	.wws-input-wrapper {
+		width: 100%;
+	}
+
+	.wws-qty-input,
+	.wws-var-input {
+		width: 100% !important;
+		text-align: left;
+	}
+
+	.wws-button {
+		width: 100%;
+		justify-content: center;
+	}
+}
